@@ -1,0 +1,25 @@
+<div class="body">
+  <div class="container">
+    <h1>Login</h1>
+    <form method="post">
+        <div class="txt_field">
+            <input type="text"  name="username" id="username" [(ngModel)]="username" required>
+            <span></span>
+            <label for="username">Username</label>
+        </div>
+        <div class="txt_field">
+            <input type="password" name="password" id="password" [(ngModel)]="password" required>
+            <span></span>
+            <label for="password">Password</label>
+        </div>
+        <div class="forgot-password">
+            Forgot Password?
+        </div>
+        <input [disabled]="!username || !password" type="submit" (click)="onClick()" class="btn btn-success" value="Login">
+        <div class="sign-up">
+            Not a member? <a href="#">Signup</a>
+        </div>
+    </form>
+    
+</div>
+</div>
