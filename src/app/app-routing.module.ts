@@ -5,8 +5,9 @@ import { LoginComponent } from './verify/login/login.component';
 
 const routes: Routes = [
   {
-    path:"login",
-    component: LoginComponent,
+    path:"verify",
+    // component: LoginComponent,
+    loadChildren: () => import('./verify/verify.module').then(m => m.VerifyModule),
     data: {title: 'Login'}
   },
   {
