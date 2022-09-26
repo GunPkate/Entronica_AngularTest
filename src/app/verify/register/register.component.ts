@@ -25,8 +25,14 @@ export class RegisterComponent implements OnInit {
 
   ngSubmit(registrationForm: NgForm) : void{
     this.isSubmitted = true;
-    if(registrationForm.valid) {alert('Register Success');}
-    if(registrationForm.invalid) {alert('Register fail');}
+    if(registrationForm.invalid) {
+      alert('Register fail');
+      return 
+    }
+    else {
+      alert('Register Success'
+      );}
   }
 
+  
 }

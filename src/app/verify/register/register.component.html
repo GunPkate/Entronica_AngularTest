@@ -2,21 +2,39 @@
     <div class="container ">
       <h1>Register</h1>
       <div class="row">
-        <form #registrationForm="ngForm" (ngSubmit)="ngSubmit(registrationForm)">
+        <form (ngSubmit)="ngSubmit(registrationForm)" #registrationForm="ngForm" >
           Username 
-          <input type="text" class="form-control p-2"   name = "username" [(ngModel)] = registerData.username required>
+          <input type="text" class="form-control p-2"   name = "username" [(ngModel)] = registerData.username required [ngClass]="{'error': isSubmitted&&registrationForm.controls['username'].invalid }">
           Password 
-          <input type="password" class="form-control p-2" name = "password" [(ngModel)] = registerData.password required>
+          <input type="password" class="form-control p-2" name = "password" [(ngModel)] = registerData.password required [ngClass]="{'error': isSubmitted&&registrationForm.controls['password'].invalid }">
           Full Name
-          <input type="text" class="form-control p-2"   name = "fullname" [(ngModel)] = registerData.fullname required>
+          <input type="text" class="form-control p-2"   name = "fullname" [(ngModel)] = registerData.fullname required [ngClass]="{'error': isSubmitted&&registrationForm.controls['fullname'].invalid }">
           Age 
-          <input type="text" class="form-control p-2" name = "age" [(ngModel)] = registerData.age required>
+          <input type="text" class="form-control p-2" name = "age" [(ngModel)] = registerData.age required [ngClass]="{'error': isSubmitted&&registrationForm.controls['age'].invalid }">
           Mobile 
-          <input type="text" class="form-control p-2"   name = "mobile" [(ngModel)] = registerData.mobile required>
+          <input type="text" class="form-control p-2"   name = "mobile" [(ngModel)] = registerData.mobile required [ngClass]="{'error': isSubmitted&&registrationForm.controls['mobile'].invalid }">
           Email 
-          <input type="text" class="form-control p-2"   name = "email" [(ngModel)] = registerData.email required email>
-          <button class="btn btn-primary" type="submit">Sign Up</button>  
+          <input type="text" class="form-control p-2"   name = "email" [(ngModel)] = registerData.email required email [ngClass]="{'error': isSubmitted&&registrationForm.controls['email'].invalid }">
+          
+          <button class="btn btn-primary col-12 mx-auto mt-4" type="submit">Sign Up</button>  
         </form>
+      </div>
+      <div class="row">
+        <div class="mx-4">
+          Username<span>{{registerData.username}}</span>
+        </div>
+        <div class="mx-4">
+          Full Name<span>{{registerData.fullname}}</span>
+        </div>
+        <div class="mx-4">
+          Age<span>{{registerData.age}}</span>
+        </div>
+        <div class="mx-4">
+          Mobile<span>{{registerData.mobile}}</span>
+        </div>
+        <div class="mx-4">
+          Email<span>{{registerData.email}}</span>
+        </div>
       </div>
       <br>
       
