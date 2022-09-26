@@ -1,1 +1,35 @@
 <p>ea-user-list works!</p>
+<div class="body">
+    <div class="container ">
+      <h1>User List</h1>
+      <form method="post">
+          <div class="user"  [ngClass]="{'user-selected':selectedUser?.id === user.id }" *ngFor="let user of users" 
+          (click)="onSelect(user)">
+            <div class="detail" *ngIf="user.isActive" >
+                user: {{ user.name}}
+            </div>
+          </div>
+
+          <br>
+            
+          <h1>User Detail</h1>
+          <div [ngClass]="{'user-hidden':selectedUser?.id === null}">
+            <div>
+                id:{{selectedUser?.id}}
+            </div>
+            <div>
+                user:{{selectedUser?.name}}
+            </div>
+            <div>
+                email:{{selectedUser?.email}}
+            </div>
+            <div>
+                age:{{selectedUser?.age}}
+            </div>
+            <div>
+                phone:{{selectedUser?.phone}}
+            </div>
+          </div>
+        </form>  
+    </div>
+</div>
