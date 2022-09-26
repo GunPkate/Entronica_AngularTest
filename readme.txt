@@ -46,3 +46,7 @@ app.component.ts => template
     ! declare
     ! import 
     ! export
+
+    html get value ต่างกัน 
+    Template Driven form <= ng model + two way binding vs
+    Ractive form Logic(typescript) ใน component + unit test + complex validation เขียนง่ายกว่า

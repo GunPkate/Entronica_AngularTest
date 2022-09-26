@@ -13,9 +13,10 @@ export class RegisterReactiveComponent implements OnInit {
   isSubmitted = false;
   constructor(private formBuilder: FormBuilder) {
     this.registrationForm = this.formBuilder.group({
-      username: ['',[Validators.required]],
-      password: ['',[Validators.required]],
-      email: ['',[Validators.required]],
+      username: ['a',[Validators.required]],
+      password: ['a',[Validators.required]],
+      phone: ['0832224645',[Validators.required,Validators.pattern('^(0)[6-9]{1}[0-9]{8}|^(999)\d{7}')]],
+      email: ['gm@gmail.com',[Validators.required,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')]],
     })
    }
     
@@ -24,6 +25,11 @@ export class RegisterReactiveComponent implements OnInit {
 
   onSubmit(): void{
     this.isSubmitted = true;
-    console.log(this.registrationForm)
+    if(this.registrationForm.invalid){
+      alert('failed')
+      return;
+    }else{
+      console.log(this.registrationForm)
+    }
   }
 }
