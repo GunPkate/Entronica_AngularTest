@@ -15,6 +15,11 @@ const routes: Routes = [
     loadChildren: () => import('./user/user.module').then(m => m.UserModule),
     data: {title: 'User'}
   },
+  {
+    path:'**',
+    redirectTo: 'verify/login',
+    pathMatch: 'full'
+  }
 ];
 // const routes: Routes = [];
 
