@@ -1,0 +1,26 @@
+<div class="body">
+    <div class="container ">
+      <h1>Register</h1>
+      <div class="row">
+        <form #registrationForm="ngForm" (ngSubmit)="ngSubmit(registrationForm)">
+          Username 
+          <input type="text" class="form-control p-2"   name = "username" [(ngModel)] = registerData.username required>
+          Password 
+          <input type="password" class="form-control p-2" name = "password" [(ngModel)] = registerData.password required>
+          Full Name
+          <input type="text" class="form-control p-2"   name = "fullname" [(ngModel)] = registerData.fullname required>
+          Age 
+          <input type="text" class="form-control p-2" name = "age" [(ngModel)] = registerData.age required>
+          Mobile 
+          <input type="text" class="form-control p-2"   name = "mobile" [(ngModel)] = registerData.mobile required>
+          Email 
+          <input type="text" class="form-control p-2"   name = "email" [(ngModel)] = registerData.email required email>
+          <button class="btn btn-primary" type="submit">Sign Up</button>  
+        </form>
+      </div>
+      <br>
+      
+    </div>
+      
+   
+</div>

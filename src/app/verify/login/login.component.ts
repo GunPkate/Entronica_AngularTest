@@ -16,10 +16,14 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onClick(): void { 
+  onSubmit(): void { 
     alert(this.username+": success");
     this.router.navigate(['/user/user-list'])
-}
+  }
+
+  onSignUp(): void {
+    this.router.navigate(['verify/register'])
+  }
 
   
 

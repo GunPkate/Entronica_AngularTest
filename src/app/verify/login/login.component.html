@@ -15,9 +15,9 @@
         <div class="forgot-password">
             Forgot Password?
         </div>
-        <input [disabled]="!username || !password" type="submit" (click)="onClick()" class="btn btn-success" value="Login">
-        <div class="sign-up">
-            Not a member? <a href="#">Signup</a>
+        <input [disabled]="!username || !password" type="submit" (click)="onSubmit()" class="btn btn-success" value="Login">
+        <div class="sign-up" (click)='onSignUp()'>
+            Not a member? <a >Signup</a>
         </div>
     </form>
     

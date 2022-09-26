@@ -10,6 +10,11 @@ const routes: Routes = [
     loadChildren: () => import('./verify/verify.module').then(m => m.VerifyModule),
     data: {title: 'Login'}
   },
+  // {
+  //   path:"register",
+  //   loadChildren: () => import('./verify/verify.module').then(m => m.VerifyModule),
+  //   data: {title: 'Register'}
+  // },
   {
     path:"user",
     loadChildren: () => import('./user/user.module').then(m => m.UserModule),
