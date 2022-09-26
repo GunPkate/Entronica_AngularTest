@@ -10,9 +10,9 @@ const routes: Routes = [
     data: {title: 'Login'}
   },
   {
-    path:"userlist",
-    component: UserListComponent,
-    data: {title: 'User List'}
+    path:"user",
+    loadChildren: () => import('./user/user.module').then(m => m.UserModule),
+    data: {title: 'User'}
   },
 ];
 // const routes: Routes = [];
