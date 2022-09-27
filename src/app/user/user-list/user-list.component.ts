@@ -21,7 +21,37 @@ export class UserListComponent implements OnInit {
   ngOnInit(): void {
     // this.users = this.userService.getAllUsers();
     // this.users = this.getAllUser4();
-    this.userService.getAllUsers().subscribe(data => {this.users = data})
+    // this.userService.getAllUsers().subscribe(data => {this.users = data})
+    try {
+      this.userService.getAllUsers().subscribe(data => {
+        console.log(data.resultCode);
+        
+        if(data.resultCode === 20000){
+          // for(let i = 0; i < data.data.length; i++) {
+          //   console.log(i)
+          //   data.data[i].isActive = true;
+          //   this.users.push(data.data[i]);
+          //   this.users[i].name = this.users[i].name;
+          // }
+          for (const user of data.data) {
+            // console.log(user);
+            this.users.push({
+              isActive: true,
+              id: user._id,
+              name: user.username,
+              email: user.email,
+              phone: user.phone,
+              age: user.age
+            })
+          }
+        }
+        console.log(this.users);
+        
+        // data.
+      })
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   onSelect(user:User): void{

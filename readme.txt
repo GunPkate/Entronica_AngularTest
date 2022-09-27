@@ -62,3 +62,4 @@ app.component.ts => template
     .subscribe ยิง request รับข้อมูลจาก Observable call back function = [parameter ของ subscribe]
     data ข้อมูลได้จาก backend 
     
+    data ที่ได้จากbackend ไม่ใช่ User[] type ต้องแก้เป็น any หรือ Interface ใน userService
