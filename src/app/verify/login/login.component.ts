@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  username : string | undefined;
-  password : string = ""
+  username : string = "";
+  password : string = "";
 
   constructor( private router:Router, private UserService:UserService) {  }
 
@@ -18,11 +18,16 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void { 
-    alert(this.username+": success");
-    if(this.UserService){
-
-      this.router.navigate(['/user/user-list'])
-    }
+    // alert(this.username+": success");
+    this.UserService.loginUsers(this.username, this.password).subscribe(data=>{
+      console.log(data)
+      if(data.resultCode === 200){
+        this.router.navigate(['/user/user-list'])
+      }else{
+        alert("Invalid user")
+      }
+    });
+ 
   }
 
   onSignUp(): void {

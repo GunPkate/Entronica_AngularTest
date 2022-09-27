@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ResponseUser, User } from '../models/user.model';
+import { ResponseUser, User,RequestUser } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +17,16 @@ export class UserService {
   // getAllUsers(): User[] { return this.users}
   // getAllUsers(): Observable<User[]> { return this.http.get<User[]>('https://631dea1dcc652771a48dcb2a.mockapi.io/api/users')}
   getAllUsers(): Observable<ResponseUser> { return this.http.get<ResponseUser>('http://localhost:3000/api/user/getall')}
+  loginUsers(email:string, password:string): Observable<ResponseUser> { 
+    const body = {email: email , password: password}
+    return this.http.post<ResponseUser>('http://localhost:3000/api/user/login',body )
+  }
+
+  registerUsers(email:string, password:string): Observable<ResponseUser> { 
+    const body = {email: email , password: password}
+    return this.http.post<ResponseUser>('http://localhost:3000/api/user/login',body )
+  }
+
 
   initMockUsers(): User[]{
     return [
