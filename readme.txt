@@ -50,3 +50,9 @@ app.component.ts => template
     html get value ต่างกัน 
     Template Driven form <= ng model + two way binding vs
     Ractive form Logic(typescript) ใน component + unit test + complex validation เขียนง่ายกว่า
+
+    user routing module import เข้า user module
+
+    input decorator ส่งข้อมูลข้าม component
+    Input decorator / Parent => child
+    Ouput decorator / child => parent
