@@ -56,3 +56,9 @@ app.component.ts => template
     input decorator ส่งข้อมูลข้าม component
     Input decorator / Parent => child
     Ouput decorator / child => parent
+
+    Http client service 
+     parameter => 1. url 2. body (payload)  
+    .subscribe ยิง request รับข้อมูลจาก Observable call back function = [parameter ของ subscribe]
+    data ข้อมูลได้จาก backend 
+    

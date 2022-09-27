@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { User } from '../models/user.model';
 
 @Injectable({
@@ -8,11 +10,12 @@ export class UserService {
 
   users: User[]
   
-  constructor() { 
+  constructor(private http: HttpClient) { 
     this.users = this.initMockUsers();
   }
 
-  getAllUsers(): User[] { return this.users}
+  // getAllUsers(): User[] { return this.users}
+  getAllUsers(): Observable<User[]> { return this.http.get<User[]>('https://631dea1dcc652771a48dcb2a.mockapi.io/api/users')}
 
   initMockUsers(): User[]{
     return [
