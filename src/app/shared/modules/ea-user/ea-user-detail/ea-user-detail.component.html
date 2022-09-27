@@ -1,0 +1,20 @@
+<p>ea-user-detail works!</p>
+
+<h1>User Detail</h1>
+<div [ngClass]="{'user-hidden':selectedUser?.id === null}">
+  <div>
+      id:{{selectedUser?.id}}
+  </div>
+  <div>
+      user:{{selectedUser?.name}}
+  </div>
+  <div>
+      email:{{selectedUser?.email}}
+  </div>
+  <div>
+      age:{{selectedUser?.age}}
+  </div>
+  <div>
+      phone:{{selectedUser?.phone}}
+  </div>
+</div>
