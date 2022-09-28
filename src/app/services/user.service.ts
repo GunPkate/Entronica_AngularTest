@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ResponseUser, User,RequestUser } from '../models/user.model';
+import { ResponseUser, User} from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -22,9 +22,15 @@ export class UserService {
     return this.http.post<ResponseUser>('http://localhost:3000/api/user/login',body )
   }
 
-  registerUsers(email:string, password:string): Observable<ResponseUser> { 
-    const body = {email: email , password: password}
-    return this.http.post<ResponseUser>('http://localhost:3000/api/user/login',body )
+  registerUsers(registerForm: any): Observable<ResponseUser> { 
+    const body = {
+      username: registerForm.username,
+      password: registerForm.password,
+      email: registerForm.email,
+      phone : registerForm.mobile,
+      age : registerForm.age
+    }
+    return this.http.post<ResponseUser>('http://localhost:3000/api/user/register',body )
   }
 
 

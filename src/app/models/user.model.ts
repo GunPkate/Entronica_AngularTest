@@ -19,8 +19,3 @@ export interface ResponseUser{
     isActive: boolean
   }[]
 }
-
-export interface RequestUser{
-  "username": string,
-  "password": string,
-}

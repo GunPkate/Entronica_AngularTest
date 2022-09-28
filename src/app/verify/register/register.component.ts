@@ -1,3 +1,4 @@
+import { UserService } from 'src/app/services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
@@ -17,21 +18,39 @@ export class RegisterComponent implements OnInit {
     email: '',
   }
 
+
+
   isSubmitted = false
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
   }
 
   ngSubmit(registrationForm: NgForm) : void{
     this.isSubmitted = true;
-    if(registrationForm.invalid) {
+    try {
+      
+      if(!registrationForm.invalid) {
+        this.userService.registerUsers(this.registerData).subscribe(data =>{
+          console.log(this.registerData)
+          console.log(data)
+          if(data.resultCode !== 40900)
+          alert('Register Success')
+          else{alert('Register fail');}
+        });
+      }
+      else {
+        alert('Register fail');
+        return 
+      }
+
+      
+    } catch (error) {
       alert('Register fail');
-      return 
     }
-    else {
-      alert('Register Success'
-      );}
+
+
+    
   }
 
   
